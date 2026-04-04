@@ -1,0 +1,74 @@
+Youtube Video Program
+
+1. Public Class Video
+
+private _title string
+private _author string
+private _length_in_seconds int
+private List<Comment> : _comments
+
+public Video(string title, string author, int length)
+
+public AddComment(Comment comment) void
+public GetDisplayText() string
+
+2. Public Class Comment
+
+private _name string
+private _text string
+
+public Comment(string name, string text)
+
+public GetDisplayText() string
+
+------------------------------------------------------------------------------------
+
+Online Ordering Program
+
+1. Public Class Order
+
+private List<Product> : _products
+private List<Customer> : _customers
+
+Public Order
+
+public TotalCost(double shippingFee) double
+public AddOrder(Product product) void
+public PackingLabel() string
+public ShippingLabel(string name, string address) string
+
+2. Public Class Product 
+
+private _name string
+private _id string
+private _price double
+private _quantity int
+
+public Product(string name, string id, double price, int quantity)
+
+public GetProductName() string
+public GetProductID() string
+public Total() double
+
+3. Public class address
+
+private _street string
+private _city string
+private _states string
+private _country string
+private _address string
+
+public Address()
+
+public InStates() bool
+public GetAddress() string
+
+4. Public class Customer
+
+private _name string
+private _address Address
+
+public Customer(string name, Address address)
+
+public GetName() string
+public GetShippingFee(bool country) int
