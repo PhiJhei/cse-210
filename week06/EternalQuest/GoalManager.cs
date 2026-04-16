@@ -14,6 +14,8 @@ public class GoalManager
         string choice = "";
         while (choice != "6")
         {
+            Console.WriteLine();
+            DisplayPlayerInfo();
             Console.WriteLine("\nMenu Options:");
             Console.WriteLine(" 1. Create New Goal");
             Console.WriteLine(" 2. List Goals");
@@ -46,7 +48,7 @@ public class GoalManager
             }
             else if (choice == "6")
             {
-                Console.WriteLine("Goodbye!");
+                Console.WriteLine("Program closed.");
             }
             else
             {
@@ -67,11 +69,10 @@ public class GoalManager
     }
     public void ListGoalDetails()
     {
-        DisplayPlayerInfo();
-        Console.WriteLine("Goals:");
+        Console.WriteLine("The goals are:");
         foreach (Goal goal in _goals)
         {
-            Console.WriteLine(goal.GetStringRepresentation());
+            Console.WriteLine(goal.GetDetailsString());
         }
     }
     public void CreateGoal()
@@ -125,7 +126,7 @@ public class GoalManager
             Goal goal = _goals[index];
             goal.RecordEvent();
             _score += goal.GetPoints();
-
+            Console.WriteLine($"You now have {_score} points.");
             if (goal is ChecklistGoal cg && cg.IsComplete())
             {
                 _score += cg.GetBonus();

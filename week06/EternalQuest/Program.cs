@@ -1,5 +1,5 @@
 using System;
-//im lost
+// Added an if else condition statement for checklist goals to display different strings appropriate to their completion progress
 class Program
 {
     static void Main(string[] args)

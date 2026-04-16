@@ -1,0 +1,4 @@
+20
+SimpleGoal:study,short session,20,True
+EternalGoal:scriptures,read for 10mins,50
+ChecklistGoal:attend class,1hr of class, 50, 3, 150, 0

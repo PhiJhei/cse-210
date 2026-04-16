@@ -1,5 +1,3 @@
-using System.Drawing;
-
 public class SimpleGoal : Goal
 {
     private bool isComplete;
@@ -11,7 +9,7 @@ public class SimpleGoal : Goal
     public override void RecordEvent()
     {
         isComplete = true;
-        Console.WriteLine($"You earned {_points} points!");
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
     }
     public override bool IsComplete()
     {
@@ -19,10 +17,11 @@ public class SimpleGoal : Goal
     }
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal:{_shortName},{_description},{_points},{isComplete}";
+        return $"{_shortName}";
     }
     public override string GetDetailsString()
     {
-        return "";
+        string status = isComplete ? "[X]" : "[ ]";
+        return $"{status} {_shortName} ({_description})";
     }
 }

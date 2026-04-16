@@ -20,7 +20,7 @@ public class ChecklistGoal : Goal
     public override void RecordEvent()
     {
         _amountCompleted++;
-        Console.WriteLine($"You earned {_points} points!");
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
 
         if (_amountCompleted == _target)
         {
@@ -34,10 +34,17 @@ public class ChecklistGoal : Goal
     public override string GetDetailsString()
     {
         string status = IsComplete() ? "[X]" : "[ ]";
-        return $"{status} {_shortName} ({_description}) -- Completed {_amountCompleted}/{_target} times";
+        if (_amountCompleted == _target)
+        {
+            return $"{status} {_shortName} ({_description}) -- Goal Completed";            
+        }
+        else
+        {
+            return $"{status} {_shortName} ({_description}) -- Currently completed {_amountCompleted}/{_target} times";            
+        }
     }
     public override string GetStringRepresentation()
     {
-        return $"ChecklistGoal:{_shortName}, {_description}, {_points}, {_target}, {_bonus}, {_amountCompleted}";
+        return $"{_shortName}";
     }
 }
